@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "app",
+    "name": "mi courses",
     "slug": "app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,8 +21,10 @@
         "backgroundColor": "#ffffff"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "expo": {
+      "web": {
+        "bundler": "metro"
+      }
     }
   }
 }
