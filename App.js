@@ -24,7 +24,7 @@ import EnrolledCourse from "./pages/EnrolledCourse";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import AuthForm from "./pages/auth/AuthPage";
 import Form from "./pages/auth/Form";
-import { AuthContext } from "./contexts/AuthContext";
+import { AuthContext, AuthProvider } from "./contexts/AuthContext";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -63,7 +63,7 @@ export default function App() {
 
             return <Ionicons name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: "teal",
+          tabBarActiveTintColor: "#0c5692",
           tabBarInactiveTintColor: "gray",
         })}
       >
@@ -77,78 +77,82 @@ export default function App() {
     );
   }
 
-  const { verified } = useContext(AuthContext);
+  // const { verified } = useContext(AuthContext);
+
+  const [newverified] = useState(true);
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        {verified === true ? (
-          <React.Fragment>
-            <Stack.Screen
-              name="/"
-              component={BottomNavs}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Settings"
-              component={SettingsPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="Account"
-              component={AccountPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="About"
-              component={AboutPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="App settings"
-              component={AppSettingsPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="Frequently Asked Questions"
-              component={FAQPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="Help"
-              component={HelpPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="Security"
-              component={SecurityPage}
-              options={{ headerShown: true }}
-            />
-            <Stack.Screen
-              name="details"
-              component={DetailsPage}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="enrolledCourse"
-              component={EnrolledCourse}
-              options={{ headerShown: false }}
-            />
-          </React.Fragment>
-        ) : (
-          <React.Fragment>
-            <Stack.Screen
-              name="/"
-              component={AuthForm}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="form"
-              component={Form}
-              options={{ headerShown: false }}
-            />
-          </React.Fragment>
-        )}
-      </Stack.Navigator>
-    </NavigationContainer>
+    <>
+      <NavigationContainer>
+        <Stack.Navigator>
+          {newverified === true ? (
+            <React.Fragment>
+              <Stack.Screen
+                name="/"
+                component={BottomNavs}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Settings"
+                component={SettingsPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="Account"
+                component={AccountPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="About"
+                component={AboutPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="App settings"
+                component={AppSettingsPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="Frequently Asked Questions"
+                component={FAQPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="Help"
+                component={HelpPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="Security"
+                component={SecurityPage}
+                options={{ headerShown: true }}
+              />
+              <Stack.Screen
+                name="details"
+                component={DetailsPage}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="enrolledCourse"
+                component={EnrolledCourse}
+                options={{ headerShown: false }}
+              />
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <Stack.Screen
+                name="/"
+                component={AuthForm}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="form"
+                component={Form}
+                options={{ headerShown: false }}
+              />
+            </React.Fragment>
+          )}
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   );
 }

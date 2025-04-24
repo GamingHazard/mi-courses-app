@@ -116,8 +116,9 @@ const DetailsPage = ({ route, navigation }) => {
         <Text style={styles.description}>{description}</Text>
       </View>
       <TouchableOpacity
+        style={{ backgroundColor: "#0c5692" }}
         onPress={enroll}
-        className="flex-row text-center p-6 mx-5 bg-teal-600 justify-center align-middle"
+        className="flex-row text-center p-6 mx-5  justify-center align-middle"
       >
         <Text className="text-white">Get satrted</Text>
         <FontAwesome6
@@ -128,6 +129,15 @@ const DetailsPage = ({ route, navigation }) => {
           size={25}
           color={"lightgrey"}
         />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{ width: 60, height: 60, backgroundColor: "#0c5692" }}
+        onPress={() => {
+          navigation.goBack();
+        }}
+        className="flex-row absolute p-6 my-5 rounded-full mx-5  justify-center align-middle"
+      >
+        <FontAwesome6 name="arrow-left" size={20} color={"lightgrey"} />
       </TouchableOpacity>
     </SafeAreaView>
   );

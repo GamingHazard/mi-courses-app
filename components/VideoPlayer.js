@@ -82,21 +82,21 @@ const VideoPlayer = ({ urls }) => {
         style={styles.tabsContainer}
       >
         {urls.map((url, index) => (
-          <View key={index} className="flex-row bg-slate-500 flex-wrap px-2">
-            <TouchableOpacity
-              style={[styles.tab, currentIndex === index && styles.activeTab]}
-              onPress={() => handleTabPress(index)}
+          <TouchableOpacity
+            key={index}
+            style={[styles.tab, currentIndex === index && styles.activeTab]}
+            onPress={() => handleTabPress(index)}
+            className="m-2"
+          >
+            <Text
+              style={[
+                styles.tabText,
+                currentIndex === index && styles.activeTabText,
+              ]}
             >
-              <Text
-                style={[
-                  styles.tabText,
-                  currentIndex === index && styles.activeTabText,
-                ]}
-              >
-                Video {index + 1}
-              </Text>
-            </TouchableOpacity>
-          </View>
+              Part {index + 1}
+            </Text>
+          </TouchableOpacity>
         ))}
       </ScrollView>
     </View>
@@ -105,7 +105,7 @@ const VideoPlayer = ({ urls }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // backgroundColor: "lightgreen",
   },
   videoContainer: {
     position: "relative",
@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
   tabsContainer: {
     flexGrow: 0,
     paddingVertical: 10,
+    // backgroundColor: "lightpink",
   },
   tab: {
     paddingVertical: 10,

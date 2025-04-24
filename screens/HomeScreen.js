@@ -66,9 +66,11 @@ const HomeScreen = ({ navigation }) => {
       <StatusBar hidden={false} />
 
       {/* Navigation Bar */}
-      <View style={styles.nav}>
-        <Text style={styles.title}>SKILLS AT YOUR FINGERTIPS</Text>
-        <Ionicons name="mail-outline" size={30} color="grey" />
+      <View className="#0c5692" style={styles.nav}>
+        <Text className="text-white" style={styles.title}>
+          SKILLS AT YOUR FINGERTIPS
+        </Text>
+        <Ionicons name="mail-outline" size={30} color="white" />
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
@@ -140,7 +142,6 @@ const HomeScreen = ({ navigation }) => {
                           navigation.navigate("details", course)
                         }
                       />
-                      h{" "}
                     </View>
                   );
                 })}
@@ -171,7 +172,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // backgroundColor: "pink",
   },
   img: {
     width: 160,
@@ -179,7 +179,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   courseCard: {
-    // backgroundColor: "white",
     borderRadius: 15,
     padding: 0,
     margin: 8,
@@ -191,8 +190,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 15,
-    backgroundColor: "#fff",
-    elevation: 10,
+    backgroundColor: "#0c5692",
+    elevation: 15,
   },
   title: {
     fontWeight: "bold",
