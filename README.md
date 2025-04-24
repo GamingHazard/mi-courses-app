@@ -1,4 +1,4 @@
-# 📱 Course Mobile Application
+# 📱 MI Course Mobile Application
 
 Welcome to the Course Mobile Application — a sleek, user-friendly app that makes short, video-based learning easy and accessible. Whether you're upskilling in tech, business, or creative fields, this app allows users to sign up, enroll in courses, bookmark their favorites, and manage their personal profiles.
 
